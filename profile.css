@@ -1,3 +1,15 @@
+html {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+    *,
+    *::before,
+    *::after {
+        -webkit-box-sizing: inherit;
+           -moz-box-sizing: inherit;
+                box-sizing: inherit;
+    }
+
 body{
     background-color: crimson;/*indianred; #ADEFD1FF;/*lightsteelblue;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -5,6 +17,7 @@ body{
 
 .profile{
     padding: 15px 10vw;
+    min-width: 300px;
 }
 
 .profile-part{
@@ -17,6 +30,10 @@ body{
 
 .profile-part ~ .profile-part {
     margin-top: 10px;
+}
+
+.profile-part-inner hr:last-child{
+    display: none;
 }
 
 .profile-part h2{
@@ -48,8 +65,9 @@ body{
 .profile-container{
     overflow: hidden;
     position: absolute;
-    top: calc(-80px);
-    border-radius: 50%;
+    top: calc(-95px);
+    left: 30px;
+    /* border-radius: 50%; */
     width: calc(140px);
     /* transform: translate(0%, -60px); */
 }
@@ -58,6 +76,7 @@ body{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
 }
 
 .text-body{
@@ -75,5 +94,178 @@ body{
 }
 
 .profile-part-inner{
-    padding: 40px 24px;
+    padding: 20px 24px;
+}
+
+.exp-part{
+    display: grid;
+    grid-auto-columns: 100px auto;
+    margin: 10px 0;
+}
+
+.exp-part img{
+    grid-column-start: 1;
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+    background: white;
+    border-radius: 5px;
+    max-width: 100px;
+}
+
+.exp-part h3{
+    margin: 0;
+}
+
+.exp-part-inner{
+    grid-column-start: 2;
+}
+
+.exp-part-inner p{
+    margin-bottom: 0;
+    margin-top: 0.5em;
+    white-space: break-spaces;
+}
+
+.profile-part-inner hr{
+    height: 0.5px;
+    border: 0;
+    border-top: 1px solid;
+    border-color: indianred;
+    color: indianred;
+    background-color: indianred;
+    margin: 0 10px;
+}
+
+.exp-under-logo{
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exp-under-logo .circle{
+    background-color: crimson;
+    width: 0.7em;
+    height: 0.7em;
+    margin-bottom: calc(10px + 0.1em);
+    margin-top: 0.6em;
+    border-radius: 100%;
+}
+
+.exp-under-logo .vertical-line{
+    width: 0;
+    height: 100%;
+    border-left: 1px solid indianred;
+}
+
+h3 object{
+    height: 1.3em;
+    margin-bottom: -6px;
+    pointer-events: none;
+}
+
+.project-part{
+    grid-auto-columns: auto;
+}
+
+.project-part .exp-part-inner{
+    grid-column-start: 1;
+}
+
+.score-container{
+    border-radius: 5px;
+    background: darkslategrey;
+}
+
+.row{
+    display: grid;
+}
+
+.row h2{
+    grid-column: 1/-1;
+}
+
+@media (max-width:400px){
+    /* .skills-part{
+        width: 100%;
+    } */
+    .row{
+        grid-template-columns: 100%;
+        gap: 10px;
+    }
+
+    .profile{
+        padding: 15px 1vw;
+    }
+}
+
+@media (min-width:401px) and (max-width:632px){
+    /* .skills-part{
+        width: 50%;
+    } */
+    .row{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .profile{
+        padding: 15px 5vw;
+    }
+}
+
+@media (min-width:633px) and (max-width:900px){
+    /* .skills-part{
+        width: 33%;
+    } */
+    .row{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width:901px) and (max-width:1200px){
+    /* .skills-part{
+        width: 25%;
+    } */
+    .row{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (min-width:1201px){
+    /* .skills-part{
+        width: 25%;
+    } */
+    .row{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+}
+
+.info-part{
+    display: flex;
+    align-content: center;
+}
+
+.info-part img{
+    height: 1.5em;
+    margin-right: 5px;
+}
+
+.credits{
+    color: white;
+}
+
+.info-part a, .credits a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: unset;
+}
+
+.info-part a:hover, .credits a:hover{
+    /* text-decoration: underline; */
+    color: #33aba3;
+    font-family: unset;
 }
